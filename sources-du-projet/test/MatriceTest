@@ -1,0 +1,79 @@
+package test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
+
+public class MatriceTest {
+    public Matrice matrice1, matrice2, matrice3, matrice4, matrice5, matrice6;
+    public double rapport; //A utilisé pour les tests de rotations
+
+    @Before
+    public void initialization() {
+        rapport = 3.0;
+        double[][] tabVals1 = new double[][] {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9},
+        };
+        double[][] tabVals2 = new double[][] {
+            {5, 19, 2},
+            {5, 7, 8},
+            {55, 77, 9},
+        };
+        double[][] tabVals3 = new double[][] {
+            {180, 264, 45},
+            {375, 573, 102},
+            {570, 882, 159},
+        };
+        double[][] tabVals4 = new double[][] {
+            {1, 4, 5, 2},
+            {2, 3, 7, 3},
+            {3, 14, 9, 4},
+            {42, 42, 42, 6},
+        };
+        double[][] tabVals5 = new double[][] {
+            {3, 12, 15, 6},
+            {6, 9, 21, 9},
+            {3, 14, 9, 4},
+            {42, 42, 42, 6},
+        };
+        double[][] tabVals6 = new double[][] {
+            {6, 15, 18, 9},
+            {9, 12, 24, 12},
+            {6, 17, 12, 7},
+            {42, 42, 42, 6},
+        };
+        matrice1 = new Matrice(tabVals1);
+        matrice2 = new Matrice(tabVals2);
+        matrice3 = new Matrice(tabVals3);
+        matrice4 = new Matrice(tabVals4);
+        matrice5 = new Matrice(tabVals5);
+        matrice6 = new Matrice(tabVals6);
+    }
+
+    @Test
+    public void calculMatricielTest() {
+        assertEquals(matrice1.calculMatriciel(matrice2), matrice3);
+        assertNotEquals(matrice3.calculMatriciel(matrice2), matrice1);
+    }
+
+    @Test
+    public void homothetieTest() {
+        assertEquals(matrice4.homothetie(rapport), matrice5);
+        assertNotEquals(matrice3.homothetie(rapport), matrice5);
+    }
+
+    @Test
+    public void getnbLignesTest() {
+    	assertEquals(matrice6.getnbLignes(), 4);
+    	assertNotEquals(matrice1.getnbLignes(), 5);
+    }
+    
+    @Test
+    public void getnbColonnesTest() {
+    	assertEquals(matrice5.getnbColonnes(), 4);
+    	assertNotEquals(matrice2.getnbLignes(), 2);
+    }
+}

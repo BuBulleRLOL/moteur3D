@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd>
+    <workingSet>Aggregate:Java Main Sources:Java Test Sources:</workingSet>
+    <useProjectRuleSet>true</useProjectRuleSet>
+    <ruleSetFile>C:\Users\harol\OneDrive\Bureau\projetmode-i4\sources-du-projet\pmd_rules_projet_mode_i4.xml</ruleSetFile>
+    <includeDerivedFiles>false</includeDerivedFiles>
+    <violationsAsErrors>false</violationsAsErrors>
+    <fullBuildEnabled>true</fullBuildEnabled>
+</pmd>
